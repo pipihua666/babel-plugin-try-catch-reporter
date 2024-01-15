@@ -1,0 +1,23 @@
+{
+	"plugins": [
+		[
+			"starts-with-ends-with"
+		]
+	],
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"targets": {
+					"node": true
+				}
+			}
+		],
+		[
+			"minify",
+			{
+				"mangle": false
+			}
+		]
+	]
+}

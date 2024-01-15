@@ -1,0 +1,52 @@
+{
+  "name": "babel-plugin-try-catch-reporter",
+  "version": "0.1.0",
+  "description": "automatically report an error in a catch block",
+  "main": "dist/index.js",
+  "author": "pipihua",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "babel-plugin-starts-with-ends-with": "^1.0.2",
+    "babel-plugin-tester": "^10.1.0",
+    "babel-preset-minify": "^0.5.1",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.4",
+    "jest": "^27.4.7",
+    "lint-staged": "^12.1.7",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "compile": "rimraf dist && babel src --out-dir dist",
+    "test": "jest --verbose",
+    "lint": "eslint --ext .js --ext .ts src"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "package-lock.json"
+  ],
+  "keywords": [
+    "babel",
+    "try",
+    "catch",
+    "sentry",
+    "report"
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
